@@ -28,13 +28,19 @@ dict[compute_3]=$compute_3
 dict[compute_4]=$compute_4
 
 i=0
+
 for key in ${!dict[@]}
 do
 	 arr[i++]=${dict[$key]}
 done
+
 echo "The computed values are"
 echo ${arr[@]}
 
 descending_order=$(printf '%s\n' ${arr[@]} | sort -nr)
-echo "Computational results in descending oreder:"
+echo "Computational results in descending order:"
 echo $descending_order
+
+ascending_order=$(printf '%s\n' ${arr[@]} | sort -n)
+echo "Computational results in ascending order:"
+echo $ascending_order
